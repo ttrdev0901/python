@@ -17,5 +17,8 @@ python practice
 - [vscode python debug](https://code.visualstudio.com/docs/python/testing)
 
 ## Documentation
-- Shinx
+- Sphinx
     - https://www.sphinx-doc.org/ja/master/usage/extensions/napoleon.html
+
+## DB-API
+- [PEP 249 -- Python Database API Specification v2.0](https://www.python.org/dev/peps/pep-0249/)
