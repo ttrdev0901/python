@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  db:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      ports:
+        - 5432:5432
+      environment:
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=password
+        - POSTGRES_DB=test
+        - TZ=Asia/Tokyo
+        - PGTZ=Asia/Tokyo

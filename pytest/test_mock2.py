@@ -37,6 +37,7 @@ def dummyConnector(mocker):
     conn_mock.__enter__ = mocker.Mock(return_value=conn_enter_mock)
     conn_mock.__exit__ = mocker.Mock()
 
+
     return conn_mock
 
 def test_get_connection(dummyConnector, mocker):
