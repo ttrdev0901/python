@@ -1,0 +1,12 @@
+{
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "python",
+    "workspaceFolder": "/home/root",
+    "extensions": [
+        "ms-ceintl.vscode-language-pack-ja",
+        "ms-python.python",
+        "vscode-icons-team.vscode-icons",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.jupyter-keymap"
+    ]
+}
