@@ -2,6 +2,9 @@
 --------------------------------------------------------------------
 python practice
 
+## LocalStack
+- https://docs.localstack.cloud/get-started/
+
 ## vscode setting
 - [vscode python](https://code.visualstudio.com/docs/python/editing)
 - [setting reference](https://code.visualstudio.com/docs/python/settings-reference)
