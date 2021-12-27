@@ -1,10 +1,7 @@
-import boto3
 from logging import getLogger
-from typing import Optional, Dict, List
+import boto3
 
 _logger = getLogger("paws")
-
-
 
 
 def create_boto_s3_resource():
@@ -18,7 +15,7 @@ def create_boto_s3_resource():
     -----------------
     s3 resource
     """
-    return boto3.resource('s3')
+    return boto3.resource('s3', endpoint_url='http://localstack:4566')
 
 def download(bucket: str, key: str, filepath: str, resource=None) -> str:
     """s3からファイルをダウンロードする関数
@@ -29,7 +26,7 @@ def download(bucket: str, key: str, filepath: str, resource=None) -> str:
         バケット名
     key : str
         キー
-    filename : str
+    filepath : str
         保存ファイル名
     resource : boto3.resource, optional
         , by default None
