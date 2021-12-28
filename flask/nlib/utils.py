@@ -14,7 +14,7 @@ fmt = Formatter('%(asctime)s - %(levelname)s - %(message)s', '%Y-%m-%d %H:%M:%S'
 sh.setFormatter(fmt)
 sh.setLevel(DEBUG)
 
-def appliable_function() -> List[str]:
+def appliable_functions() -> List[str]:
     """グループ化操作で使用できる関数のリストを返す関数
     
     Parameters:
@@ -27,7 +27,7 @@ def appliable_function() -> List[str]:
     """
     from . import applicable
     # (funcname, funcobject)
-    return [i[0] for i in inspect.getmembers(applicable)]
+    return [i[0] for i in inspect.getmembers(applicable, inspect.isfunction)]
 
 def plugins_map() -> Dict[str, Callable]:
     """呼び出し可能な関数一覧を辞書型として返す
@@ -38,7 +38,7 @@ def plugins_map() -> Dict[str, Callable]:
 
     Returns:
     ---------------
-    Dict[]
+    Dict[str:Callable]
     """
     plugins = {}
     funcs = appliable_function()

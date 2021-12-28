@@ -3,6 +3,8 @@ import base64
 import sys
 from io import BytesIO
 
+sys.path.append("../")
+
 import flask
 from flask import (
     Flask,
@@ -19,6 +21,11 @@ from logging import (
     StreamHandler, 
     DEBUG, INFO,
     Formatter
+)
+
+from nlib import (
+    utils,
+    csprovs
 )
 
 
@@ -59,7 +66,7 @@ def home():
     """
     return redirect("/apidocs")
 
-@app.route("favicon.ico")
+@app.route("/favicon.ico")
 def favicon():
     """Faviconの表示
     """
@@ -119,8 +126,8 @@ def csv_aggreagate_columns(groupbyop):
                 description: base64 encoded csv file
                 required: True
 
-resoponses:
-    200:
+        responses:
+            200:
                 description: Returns an aggregated CSV.
     """
     # Content-Type: 
@@ -162,7 +169,7 @@ resoponses:
     data, _ = _b64decode_helper(request)
 
     # Pandas.Seriesで返す
-    res = csvops.group_by_operations(
+    res = csprovs.group_by_operations(
                     data,
                     groupby_column_name=group_by,
                     apply_column_name=column,
